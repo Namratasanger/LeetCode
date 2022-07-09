@@ -25,3 +25,15 @@ var findTheDifference = function(s, t) {
     }
     return letter;
 };
+
+// another approach using sorting the strings
+var findTheDifference = function(s, t) {
+    s = s.split('').sort().join('');
+    t = t.split('').sort().join('');
+    for(let i = 0; i < t.length; i++ ){
+        if(s[i] !== t[i]){
+            return t[i];
+            break;
+        }
+    }
+}
