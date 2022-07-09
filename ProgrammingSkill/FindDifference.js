@@ -35,3 +35,14 @@ var findTheDifference = function(s, t) {
         }
     }
 }
+
+// using ascii values to find the difference character
+var findTheDifference = function(s, t) {
+    let sSum = 0, tSum = 0;
+    for(let i = 0 ; i < s.length; i++){
+        sSum += s.charCodeAt(i);
+        tSum += t.charCodeAt(i);
+    }
+    tSum += t.charCodeAt(t.length-1);
+    return String.fromCharCode(tSum - sSum);
+}
