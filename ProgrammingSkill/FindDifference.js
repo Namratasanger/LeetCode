@@ -4,7 +4,6 @@
  * @return {character}
  */
 var findTheDifference = function(s, t) {
-    let letter = "";
     let hash = [];
     for(let i = 0; i < s.length; i++){
         let index = hash.findIndex(data => data.value == s[i]);
@@ -19,11 +18,10 @@ var findTheDifference = function(s, t) {
         if(index > -1 && hash[index].count !== 0){
             hash[index].count = hash[index].count - 1;
         }else{
-            letter = t[i];
+            return t[i];
             break;
         }
     }
-    return letter;
 };
 
 // another approach using sorting the strings
